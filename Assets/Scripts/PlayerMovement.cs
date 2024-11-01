@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(moveDirection * moveVelocity);
 
-        rb.AddForce(rb.velocity * GetFriction() * Time.deltaTime);
+        rb.AddForce(rb.velocity * GetFriction() * Time.fixedDeltaTime);
         
         rb.velocity = new Vector2(
             Mathf.Clamp(rb.velocity.x, -maxSpeed.x, maxSpeed.x),
