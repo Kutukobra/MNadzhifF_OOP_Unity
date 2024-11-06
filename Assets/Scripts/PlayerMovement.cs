@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
         moveVelocity =  2 * maxSpeed / timeToFullSpeed;
         moveFriction = -2 * maxSpeed / (timeToFullSpeed * timeToFullSpeed);
         stopFriction = -2 * maxSpeed / (timeToStop * timeToStop);
+
     }
 
     public void Move()
@@ -33,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(moveDirection * moveVelocity);
 
-        rb.AddForce(rb.velocity * GetFriction() * Time.fixedDeltaTime);
+        rb.AddForce(rb.velocity.normalized * GetFriction() * Time.fixedDeltaTime);
         
         rb.velocity = new Vector2(
             Mathf.Clamp(rb.velocity.x, -maxSpeed.x, maxSpeed.x),
@@ -51,14 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 GetFriction()
     {
-        if (IsMoving())
-        {
-            return moveFriction;
-        }
-        else
-        {
-            return stopFriction;
-        }
+        return new Vector2(moveDirection.x == 0 ? stopFriction.x : moveFriction.x, moveDirection.y == 0 ? stopFriction.y : moveFriction.y);
     }
     
     public void MoveBound()
