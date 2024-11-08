@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class WeaponPickup : MonoBehaviour
@@ -11,7 +12,8 @@ public class WeaponPickup : MonoBehaviour
 
     void Awake()
     {
-        weapon = Instantiate(weaponHolder);
+        if (weaponHolder != null)
+            weapon = Instantiate(weaponHolder);
     }
 
     void Start()

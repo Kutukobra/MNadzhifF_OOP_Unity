@@ -28,10 +28,10 @@ public class ScreenCollider : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.tag == "Portal")
         {
-            Rigidbody2D playerRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
-            playerRigidBody.velocity = Vector2.Reflect(playerRigidBody.velocity, -collision.GetContact(0).normal);
+            Rigidbody2D collisionRigidBody = collision.gameObject.GetComponent<Rigidbody2D>();
+            collisionRigidBody.velocity = Vector2.Reflect(collisionRigidBody.velocity, -collision.GetContact(0).normal);
         }
     }
 }
