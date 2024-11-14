@@ -10,13 +10,23 @@ public class Enemy : MonoBehaviour
     public IObjectPool<Enemy> objectPool;
     public Rigidbody2D rb;
 
+    [SerializeField]
+    private float timeoutDelay = 30f;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void OnBecameInvisible()
+    IEnumerator DeactivateRoutine(float delay)
     {
-        objectPool.Release(this);
+        yield return new WaitForSeconds(delay);
+
+        objectPool.Release(this); 
+    }
+
+    public void Deactivate()
+    {
+        StartCoroutine(DeactivateRoutine(timeoutDelay));
     }
 }

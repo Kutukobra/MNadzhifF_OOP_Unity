@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5681601530622500065}
-  - component: {fileID: -9207356175143600470}
+  - component: {fileID: 447576799780856208}
   m_Layer: 0
   m_Name: HorizontalSpawner
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-9207356175143600470
+--- !u!114 &447576799780856208
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d53cb2ccc4d6064786eeb40bafa34d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 7966279617808516112, guid: 431df4916398cf8408beb8f7a6722ff0, type: 3}
+  enemy: {fileID: 0}
   speed: 5
-  period: 10
-  randOffset: 5
+  period: 5
+  timerOffset: 3
+  wave: 7
+  waveOffset: 4
+  spawnOffsetX: 100

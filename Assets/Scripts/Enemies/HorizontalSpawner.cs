@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class EnemySpawner : MonoBehaviour
+public class HorizontalSpawner : MonoBehaviour
 {
 
     public Enemy enemy;
@@ -19,12 +19,13 @@ public class EnemySpawner : MonoBehaviour
     private float timer = 0;
 
     [Header("Spawning Timer")]
-    public float period = 7f;
-    public float timerOffset = 5f;
+    public float period = 5f;
+    public float timerOffset = 3f;
 
     [Header("Wave Size")]
     public int wave = 7;
-    public int waveOffset = 3;
+    public int waveOffset = 4;
+    public float spawnOffsetX = 100;
 
     void Awake()
     {
@@ -73,7 +74,7 @@ public class EnemySpawner : MonoBehaviour
                 Vector2 spawnPosition = Camera.main.ScreenToWorldPoint
                 (
                 new Vector2(
-                    direction > 0 ? 0 : Screen.width,
+                    direction > 0 ? Random.Range(-spawnOffsetX, 0) : Random.Range(Screen.width, Screen.width + spawnOffsetX),
                     Random.Range(0, Screen.height)
                     )
                 );
@@ -82,7 +83,8 @@ public class EnemySpawner : MonoBehaviour
                     spawnPosition,
                     Quaternion.Euler(0, 0, 90 * direction)
                     );
-
+                
+                enemy.Deactivate();
                 timer = Time.time + period + Random.Range(-timerOffset, timerOffset);
             }
         }
