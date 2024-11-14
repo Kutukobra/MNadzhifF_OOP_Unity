@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField]
-    private float timeoutDelay = 3f;
+    private float timeoutDelay = 10f;
 
     public IObjectPool<Bullet> objectPool;
 
@@ -40,5 +40,4 @@ public class Bullet : MonoBehaviour
     {
         StartCoroutine(DeactivateRoutine(timeoutDelay));
     }
-
 }

@@ -914,7 +914,7 @@ PrefabInstance:
     - target: {fileID: 5746183016818551321, guid: 4e8c3c2553c881d49a6ca41fbb5bea81, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 17fc0974e73fc2840978e8cddaa0b9b1, type: 2}
+      objectReference: {fileID: 9100000, guid: 5a324e7b44236df418a68b2f0f99b853, type: 2}
     - target: {fileID: 7764041644952450837, guid: 4e8c3c2553c881d49a6ca41fbb5bea81, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d14caac54889f9448b6946de3bd8c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponHolder: {fileID: 1242377135298429895, guid: de13f80114466304198d6af7aa218ef3, type: 3}
+  weaponHolder: {fileID: -3296684952616468871, guid: de13f80114466304198d6af7aa218ef3, type: 3}
 --- !u!61 &1556367351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1467,7 +1467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1717458660

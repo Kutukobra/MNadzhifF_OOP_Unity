@@ -29,7 +29,6 @@ public class Portal : MonoBehaviour
 
         if (Vector2.Distance(newPosition, transform.position) < 0.5)
         {
-            Debug.Log("Changing");
             ChangePosition();
         }
         else

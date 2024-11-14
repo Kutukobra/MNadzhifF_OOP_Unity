@@ -6,7 +6,7 @@ using UnityEngine.Pool;
 public class Weapon : MonoBehaviour
 {
     [Header("Weapon Stats")]
-    [SerializeField] private float shootIntervalInSeconds = 3f;
+    [SerializeField] private float shootIntervalInSeconds = 1f;
 
 
     [Header("Bullets")]
@@ -61,7 +61,8 @@ public class Weapon : MonoBehaviour
                 return;
 
             bulletObject.transform.SetPositionAndRotation(bulletSpawnPoint.position, bulletSpawnPoint.rotation);
-
+            
+            bulletObject.Deactivate();  
             timer = Time.time + shootIntervalInSeconds;
         }
     }

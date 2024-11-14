@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 9211389349968952551}
   - component: {fileID: 3071378086173408803}
   - component: {fileID: 3795516840245745126}
-  - component: {fileID: 1242377135298429895}
+  - component: {fileID: -3296684952616468871}
   m_Layer: 0
   m_Name: Weapon_BigSpaceGun
   m_TagString: Untagged
@@ -139,7 +139,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1242377135298429895
+--- !u!114 &-3296684952616468871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 387f664008acd6a43b339d866e85f704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootIntervalInSeconds: 3
+  shootIntervalInSeconds: 1
   bullet: {fileID: 7537950446344023921, guid: 8b74972b5838e304bad98f82d534769c, type: 3}
   bulletSpawnPoint: {fileID: 847343498382275214}
   parentTransform: {fileID: 0}
