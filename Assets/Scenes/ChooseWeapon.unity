@@ -258,7 +258,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1142874112}
@@ -429,7 +429,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1142874112}
@@ -763,7 +763,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1142874112}
@@ -994,7 +994,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -5, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 0.6}
+  m_LocalScale: {x: 2, y: 2, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1294477872}
@@ -1128,7 +1128,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1556367349}
   - {fileID: 339520723}
@@ -1266,6 +1266,7 @@ GameObject:
   - component: {fileID: 1556367352}
   - component: {fileID: 1556367351}
   - component: {fileID: 1556367350}
+  - component: {fileID: 1556367354}
   m_Layer: 0
   m_Name: WeaponPickup_BigSpaceGun
   m_TagString: Untagged
@@ -1283,7 +1284,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1142874112}
@@ -1300,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d14caac54889f9448b6946de3bd8c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponHolder: {fileID: 8299264960149172996, guid: de13f80114466304198d6af7aa218ef3, type: 3}
+  weaponHolder: {fileID: 1242377135298429895, guid: de13f80114466304198d6af7aa218ef3, type: 3}
 --- !u!61 &1556367351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1419,6 +1420,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1556367354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556367348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0670afaef320644a1e6e12e21d9545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1717458658
 GameObject:
   m_ObjectHideFlags: 0
