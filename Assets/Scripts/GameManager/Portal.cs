@@ -39,7 +39,8 @@ public class Portal : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        GameManager.Instance.LevelManager.LoadScene("Main");
+        if (other.gameObject.CompareTag("Player"))
+            GameManager.Instance.LevelManager.LoadScene("Main");
     }
 
     void ChangePosition()

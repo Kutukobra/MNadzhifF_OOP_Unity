@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: -121162812308747834}
   - component: {fileID: 2791708784055565051}
   - component: {fileID: 2032884778484147849}
+  - component: {fileID: 8077233360313570164}
   m_Layer: 6
   m_Name: Frigate
   m_TagString: Untagged
@@ -269,3 +270,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 500
+--- !u!114 &8077233360313570164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4719950820245120359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefb811914fa9c542bb3d8415bb89a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkingCount: 7
+  blinkInterval: 0.1
+  blinkMaterial: {fileID: 2100000, guid: e1864135cd23ed540a4a1822833d288a, type: 2}
+  isInvincible: 0

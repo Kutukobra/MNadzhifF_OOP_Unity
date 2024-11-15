@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: -356199394610820697}
   - component: {fileID: -8521940501964770517}
   - component: {fileID: -7124655014945576213}
+  - component: {fileID: -8249237083046405566}
   m_Layer: 6
   m_Name: Fighter
   m_TagString: Untagged
@@ -235,3 +236,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afdaeddb420c8a04e9320a8985df514f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8249237083046405566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7078814422334338983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefb811914fa9c542bb3d8415bb89a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkingCount: 7
+  blinkInterval: 0.1
+  blinkMaterial: {fileID: 2100000, guid: e1864135cd23ed540a4a1822833d288a, type: 2}
+  isInvincible: 0

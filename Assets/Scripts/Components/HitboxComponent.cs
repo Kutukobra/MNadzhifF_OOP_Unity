@@ -16,7 +16,11 @@ public class HitboxComponent : MonoBehaviour
 
     public void Damage(float value)
     {
+        if (gameObject.GetComponent<InvincibilityComponent>().isInvincible)
+            return;
+
         health?.Subtract(value);
+        gameObject.GetComponent<InvincibilityComponent>().Flash();
     }
 
     public void Damage(Bullet bullet)

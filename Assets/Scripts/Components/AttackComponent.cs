@@ -15,5 +15,7 @@ public class AttackComponent : MonoBehaviour
             return;
 
         other.gameObject.GetComponent<HitboxComponent>()?.Damage(damage);
+
+        other.gameObject.GetComponent<InvincibilityComponent>()?.Flash();
     }
 }

@@ -60,10 +60,6 @@ public class PlayerMovement : MonoBehaviour
         return new Vector2(inputDirection.x == 0 ? stopFriction.x : moveFriction.x, inputDirection.y == 0 ? stopFriction.y : moveFriction.y);
     }
     
-    public void MoveBound()
-    {
-
-    }
 
     public bool IsMoving()
     {
