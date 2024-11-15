@@ -11,11 +11,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Vector2 timeToStop;
     [SerializeField] Vector2 stopClamp;
 
-    Vector2 moveDirection;
+    Vector2 inputDirection;
     Vector2 moveVelocity;
     Vector2 moveFriction;
     Vector2 stopFriction;
     Rigidbody2D rb;
+
+    public float rotateSpeed = 0.1f; 
 
     void Start()
     {
@@ -28,12 +30,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        moveDirection = new Vector2(
+        inputDirection = new Vector2(
             Input.GetAxis("Horizontal"),
             Input.GetAxis("Vertical")
         ).normalized;
 
-        rb.AddForce(moveDirection * moveVelocity);
+        rb.AddForce(inputDirection * moveVelocity);
+
+        //rb.angularVelocity = (-inputDirection.x * rotateSpeed);
 
         rb.AddForce(rb.velocity.normalized * GetFriction() * Time.fixedDeltaTime);
         
@@ -53,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Vector2 GetFriction()
     {
-        return new Vector2(moveDirection.x == 0 ? stopFriction.x : moveFriction.x, moveDirection.y == 0 ? stopFriction.y : moveFriction.y);
+        return new Vector2(inputDirection.x == 0 ? stopFriction.x : moveFriction.x, inputDirection.y == 0 ? stopFriction.y : moveFriction.y);
     }
     
     public void MoveBound()
@@ -63,6 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsMoving()
     {
-        return moveDirection != Vector2.zero;
+        return inputDirection != Vector2.zero;
     }
 }

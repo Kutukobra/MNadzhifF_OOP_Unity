@@ -10,8 +10,7 @@ public class HorizontalSpawner : MonoBehaviour
     public Enemy enemy;
     private IObjectPool<Enemy> objectPool;
 
-    [SerializeField]
-    public float speed = 5f;
+    public bool affectOrientation = true;
 
     private readonly bool collectionCheck = true;
     private readonly int defaultCapacity = 30;
@@ -29,6 +28,7 @@ public class HorizontalSpawner : MonoBehaviour
 
     void Awake()
     {
+        timer = period;
         objectPool = new ObjectPool<Enemy>(CreateEnemy, OnGetFromPool, OnReleaseFromPool, OnDestroyPooledObject, collectionCheck, defaultCapacity, maxSize);
     }
 
@@ -41,6 +41,7 @@ public class HorizontalSpawner : MonoBehaviour
 
     void OnGetFromPool(Enemy pooledEnemy)
     {
+        pooledEnemy.followPlayer.enabled = false;
         pooledEnemy.gameObject.SetActive(true);
     }
 
@@ -60,6 +61,8 @@ public class HorizontalSpawner : MonoBehaviour
         {
             int waveSize = wave + Random.Range(-waveOffset, waveOffset);
 
+            bool followsPlayer = Random.value > 0.5f;
+
             for (int i = 0; i < waveSize; i++)
             {
                 Enemy enemy = objectPool.Get();
@@ -68,8 +71,16 @@ public class HorizontalSpawner : MonoBehaviour
 
                 if (enemy == null)
                     return;
+                            
+                if (followsPlayer)
+                {
+                    enemy.FollowPlayer(true);
+                }
+                else
+                {
+                    enemy.moveDirection = Vector2.right * direction;
+                }
 
-                enemy.rb.velocity = Vector2.right * direction * speed;
 
                 Vector2 spawnPosition = Camera.main.ScreenToWorldPoint
                 (
@@ -79,14 +90,16 @@ public class HorizontalSpawner : MonoBehaviour
                     )
                 );
 
+
                 enemy.transform.SetPositionAndRotation(
                     spawnPosition,
-                    Quaternion.Euler(0, 0, 90 * direction)
+                    affectOrientation ? Quaternion.Euler(0, 0, 90 * direction) : Quaternion.identity
                     );
                 
                 enemy.Deactivate();
-                timer = Time.time + period + Random.Range(-timerOffset, timerOffset);
             }
+
+            timer = Time.time + period + Random.Range(-timerOffset, timerOffset);
         }
     }
 }

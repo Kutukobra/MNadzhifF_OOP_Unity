@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1405450867963968001}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 387f664008acd6a43b339d866e85f704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootIntervalInSeconds: 1
+  shootIntervalInSeconds: 0.5
   bullet: {fileID: 7537950446344023921, guid: 8b74972b5838e304bad98f82d534769c, type: 3}
   bulletSpawnPoint: {fileID: 847343498382275214}
   parentTransform: {fileID: 0}

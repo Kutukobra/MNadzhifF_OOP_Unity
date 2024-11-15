@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = Vector2.up * bulletSpeed;
+        rb.velocity = transform.up * bulletSpeed;
     }
 
     IEnumerator DeactivateRoutine(float delay)
@@ -39,5 +39,11 @@ public class Bullet : MonoBehaviour
     public void Deactivate()
     {
         StartCoroutine(DeactivateRoutine(timeoutDelay));
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        StopAllCoroutines();
+        objectPool.Release(this);
     }
 }

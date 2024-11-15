@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(GameObject.FindWithTag("Player"));
-        //DontDestroyOnLoad(GameObject.FindWithTag("ScreenCollider"));
+        DontDestroyOnLoad(GameObject.Find("ScreenCollider"));
 
         //DontDestroyOnLoad(GameObject.FindWithTag("Player"));
 

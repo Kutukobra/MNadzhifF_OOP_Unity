@@ -10,9 +10,6 @@ public class TopSpawner : MonoBehaviour
     public Enemy enemy;
     private IObjectPool<Enemy> objectPool;
 
-    [SerializeField]
-    public float speed = 5f;
-
     private readonly bool collectionCheck = true;
     private readonly int defaultCapacity = 30;
     private readonly int maxSize = 100;
@@ -41,6 +38,7 @@ public class TopSpawner : MonoBehaviour
 
     void OnGetFromPool(Enemy pooledEnemy)
     {
+        pooledEnemy.followPlayer.enabled = false;
         pooledEnemy.gameObject.SetActive(true);
     }
 
@@ -67,7 +65,7 @@ public class TopSpawner : MonoBehaviour
                 if (enemy == null)
                     return;
 
-                enemy.rb.velocity = Vector2.down * speed;
+                enemy.moveDirection = Vector2.down;
 
                 Vector2 spawnPosition = Camera.main.ScreenToWorldPoint
                 (
@@ -82,9 +80,9 @@ public class TopSpawner : MonoBehaviour
                     Quaternion.Euler(Vector3.down)
                     );
                 
-                enemy.Deactivate();
-                timer = Time.time + period + Random.Range(-timerOffset, timerOffset);
+                enemy.Deactivate();    
             }
+            timer = Time.time + period + Random.Range(-timerOffset, timerOffset);
         }
     }
 }

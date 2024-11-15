@@ -119,4 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 387f664008acd6a43b339d866e85f704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shootIntervalInSeconds: 0.5
+  bullet: {fileID: 0}
+  bulletSpawnPoint: {fileID: 0}
   parentTransform: {fileID: 0}
