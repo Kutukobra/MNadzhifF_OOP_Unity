@@ -30,9 +30,16 @@ public class EnemySpawner : MonoBehaviour
     {
         totalKill++;
         spawnCount--;
+
         if (spawnCount <= 0)
         {
             StartCoroutine("Spawn");
+        }
+
+        if (totalKill % minimumKillsToIncreaseSpawnCount == 0)
+        {
+            defaultSpawnCount += spawnCountMultiplier;
+            spawnCountMultiplier += multiplierIncreaseCount;
         }
     }
 
@@ -43,7 +50,7 @@ public class EnemySpawner : MonoBehaviour
         spawnCount = defaultSpawnCount;
         for (int i = 0; i < defaultSpawnCount; i++)
         {
-            Instantiate(spawnedEnemy, Random.Range(-30, 30) * Vector2.right, Quaternion.identity).OnDestroyed += OnSpawnedDestroyed;
+            Instantiate(spawnedEnemy, Random.Range(-10, 10) * Vector2.right + Vector2.up * 10, Quaternion.identity).OnDestroyed += OnSpawnedDestroyed;
         }
     }
 

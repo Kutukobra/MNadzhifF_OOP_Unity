@@ -1343,7 +1343,7 @@ MonoBehaviour:
   totalKill: 0
   spawnInterval: 3
   spawnCount: 0
-  defaultSpawnCount: 1
+  defaultSpawnCount: 5
   spawnCountMultiplier: 1
   multiplierIncreaseCount: 1
   combatManager: {fileID: 0}
