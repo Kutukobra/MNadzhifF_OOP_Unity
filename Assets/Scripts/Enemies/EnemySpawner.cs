@@ -17,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
     [Header("Spawned Enemies Counter")]
     public int spawnCount = 0;
-    public int defaultSpawnCount = 1;
+    public int defaultSpawnCount = 3;
     public int spawnCountMultiplier = 1;
     public int multiplierIncreaseCount = 1;
 
@@ -29,16 +29,28 @@ public class EnemySpawner : MonoBehaviour
     void OnSpawnedDestroyed()
     {
         totalKill++;
+        spawnCount--;
+        if (spawnCount <= 0)
+        {
+            StartCoroutine("Spawn");
+        }
+    }
+
+    IEnumerator Spawn()
+    {
+        yield return new WaitForSeconds(spawnInterval);
+
+        spawnCount = defaultSpawnCount;
+        for (int i = 0; i < defaultSpawnCount; i++)
+        {
+            Instantiate(spawnedEnemy, Random.Range(-30, 30) * Vector2.right, Quaternion.identity).OnDestroyed += OnSpawnedDestroyed;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        spawnCount = defaultSpawnCount;
-        for (int i = 0; i < spawnCount; i++)
-        {
-            Instantiate(spawnedEnemy, Random.Range(-10, 10) * Vector2.right, Quaternion.identity).OnDestroyed += OnSpawnedDestroyed;
-        }
+        StartCoroutine("Spawn");
     }
 
     // Update is called once per frame
