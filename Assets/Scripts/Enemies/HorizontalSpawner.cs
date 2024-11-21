@@ -41,7 +41,6 @@ public class HorizontalSpawner : MonoBehaviour
 
     void OnGetFromPool(Enemy pooledEnemy)
     {
-        pooledEnemy.followPlayer.enabled = false;
         pooledEnemy.gameObject.SetActive(true);
     }
 
@@ -72,15 +71,6 @@ public class HorizontalSpawner : MonoBehaviour
                 if (enemy == null)
                     return;
                             
-                if (followsPlayer)
-                {
-                    enemy.FollowPlayer(true);
-                }
-                else
-                {
-                    enemy.moveDirection = Vector2.right * direction;
-                }
-
 
                 Vector2 spawnPosition = Camera.main.ScreenToWorldPoint
                 (
@@ -95,8 +85,6 @@ public class HorizontalSpawner : MonoBehaviour
                     spawnPosition,
                     affectOrientation ? Quaternion.Euler(0, 0, 90 * direction) : Quaternion.identity
                     );
-                
-                enemy.Deactivate();
             }
 
             timer = Time.time + period + Random.Range(-timerOffset, timerOffset);

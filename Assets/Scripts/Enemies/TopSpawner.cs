@@ -38,7 +38,6 @@ public class TopSpawner : MonoBehaviour
 
     void OnGetFromPool(Enemy pooledEnemy)
     {
-        pooledEnemy.followPlayer.enabled = false;
         pooledEnemy.gameObject.SetActive(true);
     }
 
@@ -78,9 +77,7 @@ public class TopSpawner : MonoBehaviour
                 enemy.transform.SetPositionAndRotation(
                     spawnPosition,
                     Quaternion.Euler(Vector3.down)
-                    );
-                
-                enemy.Deactivate();    
+                    ); 
             }
             timer = Time.time + period + Random.Range(-timerOffset, timerOffset);
         }
