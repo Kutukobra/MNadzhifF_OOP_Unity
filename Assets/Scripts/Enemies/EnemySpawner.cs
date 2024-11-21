@@ -25,10 +25,20 @@ public class EnemySpawner : MonoBehaviour
 
     public bool isSpawning = false;
 
+
+    void OnSpawnedDestroyed()
+    {
+        totalKill++;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawnCount = defaultSpawnCount;
+        for (int i = 0; i < spawnCount; i++)
+        {
+            Instantiate(spawnedEnemy, Random.Range(-10, 10) * Vector2.right, Quaternion.identity).OnDestroyed += OnSpawnedDestroyed;
+        }
     }
 
     // Update is called once per frame
