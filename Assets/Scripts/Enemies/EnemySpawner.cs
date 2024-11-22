@@ -23,46 +23,55 @@ public class EnemySpawner : MonoBehaviour
 
     public CombatManager combatManager;
 
+    public float spawnRadius = 10f;
+
     public bool isSpawning = false;
 
-
-    void OnSpawnedDestroyed()
-    {
-        totalKill++;
-        spawnCount--;
-
-        if (spawnCount <= 0)
-        {
-            StartCoroutine("Spawn");
-        }
-
-        if (totalKill % minimumKillsToIncreaseSpawnCount == 0)
-        {
-            defaultSpawnCount += spawnCountMultiplier;
-            spawnCountMultiplier += multiplierIncreaseCount;
-        }
-    }
-
-    IEnumerator Spawn()
-    {
-        yield return new WaitForSeconds(spawnInterval);
-
-        spawnCount = defaultSpawnCount;
-        for (int i = 0; i < defaultSpawnCount; i++)
-        {
-            Instantiate(spawnedEnemy, Random.Range(-10, 10) * Vector2.right + Vector2.up * 10, Quaternion.identity).OnDestroyed += OnSpawnedDestroyed;
-        }
-    }
-
-    // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("Spawn");
+        spawnCount = defaultSpawnCount;
+        combatManager = transform.parent.gameObject.GetComponent<CombatManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnEnemyKilled()
     {
-        
+        totalKill++;
+        totalKillWave++;
+
+        combatManager?.OnEnemyKilled();
+
+        if (totalKillWave >= minimumKillsToIncreaseSpawnCount)
+        {
+            totalKillWave = 0;
+            spawnCount = defaultSpawnCount * (spawnCountMultiplier + multiplierIncreaseCount);
+            multiplierIncreaseCount++;
+        }
     }
+
+    public void SpawnEnemies()
+    {
+        if (combatManager.waveNumber < spawnedEnemy.level)
+            return;
+
+        if (isSpawning)
+            return;
+
+        Debug.Log("Spawning " + spawnedEnemy);
+        StartCoroutine(SpawnEnemiesRoutine());
+    }
+
+    IEnumerator SpawnEnemiesRoutine()
+    {
+        isSpawning = true;
+        for (int i = 0; i < spawnCount; i++)
+        {
+            Enemy enemy = Instantiate(spawnedEnemy, Random.onUnitSphere * spawnRadius, Quaternion.identity);
+            enemy.enemySpawner = this;
+            combatManager.totalEnemies++;
+
+            yield return new WaitForSeconds(spawnInterval);
+        }
+        isSpawning = false;
+    }
+
 }

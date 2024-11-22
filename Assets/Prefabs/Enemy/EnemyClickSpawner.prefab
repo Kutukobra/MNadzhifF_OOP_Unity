@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3976800789711774733
+--- !u!1 &5930282263469316283
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5681601530622500065}
-  - component: {fileID: -5487353925455234231}
+  - component: {fileID: 8725468086345731877}
+  - component: {fileID: 1089148343706376573}
   m_Layer: 0
-  m_Name: HorizontalSpawner
+  m_Name: EnemyClickSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5681601530622500065
+--- !u!4 &8725468086345731877
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976800789711774733}
+  m_GameObject: {fileID: 5930282263469316283}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.0007079, y: -1.563799, z: -0.078658044}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-5487353925455234231
+--- !u!114 &1089148343706376573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976800789711774733}
+  m_GameObject: {fileID: 5930282263469316283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d53cb2ccc4d6064786eeb40bafa34d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 84f266ff70c33e942b41acad2f8f9e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 3693757478362854723, guid: 431df4916398cf8408beb8f7a6722ff0, type: 3}
-  speed: 5
-  period: 5
-  timerOffset: 3
-  wave: 7
-  waveOffset: 4
-  spawnOffsetX: 100
+  enemyVariants:
+  - {fileID: 4132259058617841212, guid: 468bb68fefa7c9945a0a101445c9bffb, type: 3}
+  - {fileID: 4984117706996640394, guid: 632ebc4ec5ff5984a950b9fcc51e77bb, type: 3}
+  - {fileID: 3693757478362854723, guid: b6923502eb3d55d46a9bf321c4060e54, type: 3}
+  - {fileID: -3388397037512603961, guid: c288492605a0ffa44be60e83e9702257, type: 3}
+  selectedVariant: 0

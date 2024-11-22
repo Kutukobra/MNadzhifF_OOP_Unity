@@ -6,18 +6,9 @@ using UnityEngine.Pool;
 
 public class Enemy : MonoBehaviour
 {
+    public EnemySpawner enemySpawner;
+
     public int level;
-
-    public delegate void OnDestroyedHandler();
-    public event OnDestroyedHandler OnDestroyed;
-
-    void OnDisable()
-    {
-        if(OnDestroyed != null)
-            OnDestroyed();
-    }
-
-    public IObjectPool<Enemy> objectPool;
     public Rigidbody2D rb;
 
     public Vector2 moveDirection = Vector2.zero;
@@ -26,5 +17,10 @@ public class Enemy : MonoBehaviour
     public void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void OnDestroy()
+    {
+        enemySpawner?.OnEnemyKilled();
     }
 }

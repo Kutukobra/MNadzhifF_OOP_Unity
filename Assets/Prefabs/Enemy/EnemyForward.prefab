@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1590d89a1a718a3459fc477800b6a41a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 10
 --- !u!114 &-8521940501964770517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cefb811914fa9c542bb3d8415bb89a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blinkingCount: 7
+  blinkingCount: 2
   blinkInterval: 0.1
   blinkMaterial: {fileID: 2100000, guid: e1864135cd23ed540a4a1822833d288a, type: 2}
   spriteRenderer: {fileID: 0}
@@ -231,7 +231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 018bd379b3988c34c9f0127bdd17167f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemySpawner: {fileID: 0}
   level: 1
   rb: {fileID: 0}
   moveDirection: {x: 0, y: 0}
-  moveSpeed: 5
+  moveSpeed: 6

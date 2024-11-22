@@ -14,9 +14,14 @@ public class EnemyTargetting : Enemy
         base.Awake();
     }
 
+    void Start()
+    {
+        target = Player.Instance.transform;
+        base.Awake();
+    }
+
     void Update()
     {
-        Debug.Log(Player.Instance.transform.position);
         Vector2 direction = (Vector2)target.position - rb.position;
         direction.Normalize();
 
