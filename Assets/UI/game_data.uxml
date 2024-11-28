@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="game_data" style="flex-grow: 1;">
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Health" style="-unity-text-align: middle-left; white-space: nowrap; align-items: flex-start; align-self: flex-start; height: 49px; width: 106px;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Point" style="align-items: flex-start; align-self: flex-start; height: 38px; width: 112px;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Wave" style="height: 48px; width: 119px; align-items: flex-end; align-self: flex-end; -unity-text-align: middle-right;" />
+        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EnemyRemaining" style="-unity-text-align: middle-left; align-self: flex-start; height: 19px; width: 141px; white-space: nowrap; align-items: center; justify-content: flex-start;" />
+    </ui:VisualElement>
+</ui:UXML>
