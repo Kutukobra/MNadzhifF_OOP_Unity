@@ -1,8 +1,9 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/UI_Data.uss?fileID=7433441132597879392&amp;guid=e7cf522eec31b6642b78437bfd84a306&amp;type=3#UI_Data" />
     <ui:VisualElement name="game_data" style="flex-grow: 1;">
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Health" style="-unity-text-align: middle-left; white-space: nowrap; align-items: flex-start; align-self: flex-start; height: 49px; width: 106px;" />
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Point" style="align-items: flex-start; align-self: flex-start; height: 38px; width: 112px;" />
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Wave" style="height: 48px; width: 119px; align-items: flex-end; align-self: flex-end; -unity-text-align: middle-right;" />
-        <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EnemyRemaining" style="-unity-text-align: middle-left; align-self: flex-start; height: 19px; width: 141px; white-space: nowrap; align-items: center; justify-content: flex-start;" />
+        <ui:Label tabindex="-1" text="Health:" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Health" style="-unity-text-align: middle-left; white-space: nowrap; align-items: flex-start; align-self: flex-start; height: 24px; width: 98px; color: rgb(255, 255, 255);" />
+        <ui:Label tabindex="-1" text="Points" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Point" style="align-items: flex-start; align-self: flex-start; height: 26px; width: 99px; color: rgb(255, 255, 255); -unity-text-align: middle-left;" />
+        <ui:Label tabindex="-1" text="Wave Number" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Wave" style="height: 28px; width: 103px; align-items: flex-end; align-self: flex-start; -unity-text-align: middle-left; color: rgb(255, 255, 255);" />
+        <ui:Label tabindex="-1" text="Enemy Remaining" parse-escape-sequences="true" display-tooltip-when-elided="true" name="EnemyRemaining" style="-unity-text-align: middle-left; align-self: flex-start; height: 19px; width: 141px; white-space: nowrap; align-items: center; justify-content: flex-start; color: rgb(255, 255, 255);" />
     </ui:VisualElement>
 </ui:UXML>

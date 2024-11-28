@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
         totalKill++;
         totalKillWave++;
 
-        combatManager?.OnEnemyKilled();
+        combatManager?.OnEnemyKilled(spawnedEnemy.level);
 
         if (totalKillWave >= minimumKillsToIncreaseSpawnCount)
         {
